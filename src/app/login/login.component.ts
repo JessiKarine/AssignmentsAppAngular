@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Utilisateur } from './login.model';
 import { LoggingService } from 'src/app/shared/logging.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../shared/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -11,8 +12,9 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   username = null;
   password = null;
+  error = null;
 
-  constructor(private loggingService:LoggingService,
+  constructor(private authService : AuthService , private loggingService:LoggingService,
     private router:Router) {}
 
   ngOnInit(): void {
@@ -24,16 +26,17 @@ export class LoginComponent implements OnInit {
    let user = new Utilisateur();
    user.username = this.username;
    user.password = this.password;
-   this.loggingService.login(user);
-   this.router.navigate(["/home"]);
-    /*this.assignmentsService.addAssignment(nouvelAssignment)
-      .subscribe(reponse => {
-        console.log(reponse.message);
+   this.error=null;
+   this.loggingService.login(user).subscribe(reponse => {
+      if( reponse.auth=== true){
+      this.authService.logIn(reponse.isAdmin);
+      this.router.navigate(["/home"]);
 
-         // et on navigue vers la page d'accueil qui affiche la liste
-         this.router.navigate(["/home"]);
-      });*/
-     // console.log('atooo', this.username)
+      }
+      else{
+        this.error = reponse.error;
+      }
+  });
   }
 
 }

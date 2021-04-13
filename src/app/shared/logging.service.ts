@@ -7,14 +7,14 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class LoggingService {
-  uri = "https://backmadagascar2021.herokuapp.com/api/assignments";
+  uri = "https://backmbdsmevajessi.herokuapp.com/api/login";
   constructor(private http:HttpClient) { }
 
   log(assignmentName:string, action:string) {
     console.log("L'assignment " + assignmentName + " " + action);
   }
 
-  login(user:Utilisateur) {
+  login(user:Utilisateur):Observable<any> {
  
     //this.loggingService.log(assignment.nom, " a été ajouté");
 
@@ -23,7 +23,7 @@ export class LoggingService {
 
     return of("Service: assignment ajouté !");*/
     console.log("ato amin'ny observable")
-  //  return this.http.post(this.uri, user);
+    return this.http.post(this.uri, user);
   }
 
 }

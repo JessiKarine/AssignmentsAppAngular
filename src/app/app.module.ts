@@ -27,6 +27,7 @@ import { EditAssigmentComponent } from './assignments/edit-assigment/edit-assigm
 import { AuthGuard } from './shared/auth.guard';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes:Routes = [
   {
@@ -39,27 +40,31 @@ const routes:Routes = [
     // idem avec  http://localhost:4200/home
     path:"home",
     component:AssignmentsComponent,
-    //canActivate : [AuthGuard]
+    canActivate : [AuthGuard]
   },
   {
     path:"add",
     component:AddAssignmentComponent,
-    //canActivate : [AuthGuard]
+    canActivate : [AuthGuard]
   },
   {
     path:"assignment/:id",
     component:AssignmentDetailComponent,
-   // canActivate : [AuthGuard]
+    canActivate : [AuthGuard]
   },
   {
     path:"assignment/:id/edit",
     component:EditAssigmentComponent,
-    //canActivate : [AuthGuard]
+    canActivate : [AuthGuard]
   },
   {
     path:"login",
     component:LoginComponent
   
+  },
+  {
+    path:"register",
+    component:RegisterComponent
   }
 ]
 @NgModule({
@@ -71,7 +76,8 @@ const routes:Routes = [
     AssignmentDetailComponent,
     AddAssignmentComponent,
     EditAssigmentComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

@@ -9,13 +9,12 @@ export class AuthService {
 
   constructor() {}
 
-  logIn(login, password) {
+  logIn(isAdmin) {
     // typiquement, acceptera en paramètres un login et un password
     // vérifier qu'ils sont ok, et si oui, positionner la propriété loggedIn à true
     // si login/password non valides, positionner à false;
 
-    if (login === 'admin') this.admin = true;
-
+    this.admin = isAdmin;
     this.loggedIn = true;
   }
 

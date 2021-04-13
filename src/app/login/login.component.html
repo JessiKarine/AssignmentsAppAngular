@@ -29,10 +29,13 @@
                     </div>
 
                     <div>
-                        <a href="#" class="txt1">
-                            Mot de passe oublié?
+                        <a routerLink="/register" class="txt1">
+                            Vous n'avez pas encore de compte?
                         </a>
                     </div>
+                </div>
+                <div *ngIf="error">
+                    <span class="msg-err">{{error}}</span>
                 </div>
 
                 <div class="container-login100-form-btn">
