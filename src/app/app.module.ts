@@ -14,7 +14,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-
+import { DragDropModule} from '@angular/cdk/drag-drop';
 
 import { AssignmentsComponent } from './assignments/assignments.component';
 import { RenduDirective } from './shared/rendu.directive';
@@ -28,6 +28,7 @@ import { AuthGuard } from './shared/auth.guard';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { HeaderComponent } from './header/header.component';
 
 const routes:Routes = [
   {
@@ -39,8 +40,8 @@ const routes:Routes = [
   {
     // idem avec  http://localhost:4200/home
     path:"home",
-    component:AssignmentsComponent,
-    canActivate : [AuthGuard]
+    component:AssignmentsComponent
+    //canActivate : [AuthGuard]
   },
   {
     path:"add",
@@ -77,7 +78,8 @@ const routes:Routes = [
     AddAssignmentComponent,
     EditAssigmentComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -87,6 +89,7 @@ const routes:Routes = [
     MatFormFieldModule, MatInputModule, MatDatepickerModule,
     MatNativeDateModule, MatListModule, MatCardModule, MatCheckboxModule,
     MatSlideToggleModule,
+    DragDropModule,
     RouterModule.forRoot(routes), HttpClientModule
   ],
   providers: [],

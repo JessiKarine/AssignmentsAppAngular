@@ -1,0 +1,76 @@
+.wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: -apple-system,"Segoe UI";
+    letter-spacing: 0.5px;
+  }
+  .banner{
+    background-color: #263545;
+    height: 70px;
+    z-index: 10;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .banner .banner-user .banner-icon .banner-btn-logout{
+    background-color:transparent;
+    border:none;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    outline:  none !important;
+  }
+  .banner .banner-user .banner-icon .banner-btn-logout svg{
+    height: 100%;
+    fill: white;
+    width: 52px;
+  }
+  .banner .banner-user{
+    display: flex;
+    flex-display: row;
+  }
+  .banner .banner-user .banner-user-info{
+    display: flex;
+    flex-direction: row;
+    color:white;
+    fill:white;
+    cursor: pointer;
+    transition: all 0.3s;
+  
+  }
+  .banner .banner-user .banner-user-info:hover{
+    transition: all 0.3s;
+    background-color: #1e2c52;
+    height: 100%;
+  }
+  .banner .banner-user .banner-user-info .banner-user-info-img{
+    color: white;   
+    width:30px;
+    margin-right: 10px;
+  }
+  .content-wrapper{
+    position: relative;
+    top:0;
+    left: 0;
+    flex : 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .btn-logout {
+    margin-top: 15px;
+    float: right;
+    margin-right: 10px;
+  }
+  
+  .btn-back {
+    background: unset;
+  }
