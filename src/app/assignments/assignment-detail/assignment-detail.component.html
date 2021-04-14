@@ -2,12 +2,10 @@
   <mat-card *ngIf="assignmentTransmis">
     <mat-card-title>{{assignmentTransmis.nom}}</mat-card-title>
     <mat-card-subtitle>{{assignmentTransmis.dateDeRendu | date}}</mat-card-subtitle>
-    <mat-card-subtitle>Auteur : {{assignmentTransmis.auteur}}</mat-card-subtitle>
+    <mat-card-subtitle>Auteur : {{assignmentTransmis.eleve.nom}}</mat-card-subtitle>
     <mat-card-subtitle>Note : {{assignmentTransmis.note}}/20</mat-card-subtitle>
     <mat-card-subtitle>Remarques : {{assignmentTransmis.remarques}}</mat-card-subtitle>
     <mat-card-subtitle>Matiere : {{assignmentTransmis.matiere.nom}}</mat-card-subtitle>
-    <img mat-card-image src="{{assignmentTransmis.matiere.image}}" alt="image matiere">
-    <img mat-card-image src="{{assignmentTransmis.matiere.imageProf}}" alt="image prof">
     <div id="bottom">
       <mat-checkbox *ngIf="!assignmentTransmis.rendu" (click)="onAssignmentRendu()">
         Rendu
