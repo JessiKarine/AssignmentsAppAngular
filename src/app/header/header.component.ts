@@ -8,6 +8,7 @@ import { AuthService } from '../shared/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
+  isMenuOpen = false ;
   constructor(private authService : AuthService) {
 
   }
@@ -15,4 +16,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  openMenu = () => { 
+    this.isMenuOpen = !this.isMenuOpen
+  }
 }

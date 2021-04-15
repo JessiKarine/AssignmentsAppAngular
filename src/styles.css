@@ -237,11 +237,22 @@ body { margin: 0px; font-family: -apple-system, Roboto, "Helvetica Neue", sans-s
     display:  flex;
 }
 .section-card-container .assignment-card { 
-    max-width:  400px;
-    width: 400px;
+    max-width:  250px;
+    width: 250px;
     margin: 0px 10px 10px 0px;
     cursor: pointer;
 }
+ .assignment-card .card-img-container { 
+    height:  216px;
+    width: calc(100% + 32px);
+    margin: 0 -16px 16px -16px;
+    overflow-y: hidden;
+}
+.assignment-card .card-img-container img{ 
+    width: 100%;
+    margin: 0;
+}
+
 .devoir-container{ 
     display:  flex;
 }
@@ -249,7 +260,7 @@ body { margin: 0px; font-family: -apple-system, Roboto, "Helvetica Neue", sans-s
 .devoir-container .devoir-subcontainer { 
     max-width: 50%;
     min-width: 50%;
-    padding : 10px;
+    padding : 10px 5px;
 }
 .devoir-container .devoir-subcontainer .devoir-subcontainer-item { 
     flex : 1;
