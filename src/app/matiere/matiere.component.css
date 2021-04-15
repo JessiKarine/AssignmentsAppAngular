@@ -1,0 +1,210 @@
+.section-controller{
+    background-color: #f7f9fa;
+    height: 70px;
+    border-bottom: 1px solid #d3dce0;
+    padding:13px 10px;
+    display: flex;
+    flex-direction: row;
+}
+.section-controller .section-controller-icon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 280px;
+    min-width: 280px;
+}
+.section-controller .section-controller-icon .duck-icons{
+    height: 100%;
+    fill: red;
+    width: 52px;
+}
+.section-controller .section-controller-icon .duck-title{
+    font-weight: 400;
+    font-size: 2em;
+    margin-left: 20px;
+}
+
+
+.section-controller .section-controller-search-bar{
+    width: 50%;
+    background-color: white;
+    border: 1px solid #e5ebed;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.section-controller .section-controller-search-bar .custom-input-search{
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+}
+.section-controller .section-controller-search-bar .custom-input-search .custom-input-search-select-theme{
+    display: flex;
+}
+.section-controller .section-controller-search-bar .custom-input-search .custom-input-search-select-theme .custom-input-search-select-theme-title{
+    background-color: #e5ebed;
+    padding: 5px;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    font-weight: 500;
+    color:#536171;
+    padding-left :  10px;
+    padding-right: 10px;
+}
+.section-controller .section-controller-search-bar .custom-input-search .custom-input-search-select-theme .custom-input-search-select-theme-name{
+    background-color: #2e75d4;
+    color:white;
+    border:none;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    min-width: 60px;
+    max-width: 200px;
+    text-overflow: ellipsis;
+    padding-left : 12px;
+    padding-right: 25px;
+    font-weight: 550;
+}
+
+.section-controller .section-controller-search-bar .custom-input-search .search-control{
+    margin-left: 20px;
+    padding-left: 10px;
+    flex:1 ;
+    font-weight: 400;
+    border:none;
+    background-color: white;
+}
+
+.section-controller .section-controller-add-bar{
+    margin-left: auto;
+}
+.section-controller .section-controller-add-bar .btn-cust{
+    background-color: #2e75d4;
+    text-decoration: none;
+    font-weight: 500;
+}
+.section-container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex : 1 1 auto;
+}
+.section-container .section-menu{
+    background-color:#f7f9fa;
+    width: 280px;
+    min-width:280px;
+    border-right: 1px solid #d3dce0;
+    padding : 10px;
+}
+.section-container .section-menu .section-menu-container{
+
+}
+.section-container .section-menu .section-menu-container .section-menu-widget{
+    color :#6a7889;
+
+}
+.section-container .section-menu .section-menu-container .section-menu-widget header{
+
+}
+.section-container .section-menu .section-menu-container .section-menu-widget header h2{
+    font-size: .75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 1.92em;
+    margin-top:1.92em;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #c3cfd5;
+    line-height: 2;
+}
+.section-container .section-menu .section-menu-container  .status-widget .status{
+    display: flex;
+    justify-content: space-between;
+}
+.custom-button{
+    margin: 10px auto;
+    width: 100%;
+    height: 3.5rem;
+    border-radius: 5px;
+    border: none;
+    font-weight: 600;
+    box-shadow: 0 1px 0 rgba(25,37,50,0.1);
+}
+.custom-button.custom-button-success{
+    background-color: #16875d;
+    border-color: #16875d;
+    color: white;
+}
+.custom-button.custom-button-danger{
+    background-color: #b02919;
+    border-color: #e2392b;
+    color: white;
+}
+
+.section-container .section-contenue{
+    background-color: white;
+    flex: 1 1 auto;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.section-container .section-contenue table{
+    border-radius: 6px;
+    box-shadow: 0 0 0 1px #e5ebed;
+    font-family: -apple-system,"Segoe UI";
+}
+.section-container .section-contenue table thead tr th{
+    background-color: #f7f9fa;
+    border-bottom:1px solid #e5ebed;
+    border-top:1px solid #e5ebed;
+    color : #536171;
+    font-weight: 400;
+    font-size: 0.975rem;
+
+}
+.section-container .section-contenue table tbody tr:hover{
+    cursor: pointer;
+}
+.section-container .section-contenue table tbody tr td{
+
+    color : #536171;
+    font-weight: 400;
+    font-size: 0.975rem;
+
+}
+
+.section-container .section-contenue table tbody tr td .not-validate{
+    color : red;
+    background-color: rgba(255,95,80,0.53);
+    padding: 2px 5px;
+    border-radius: 2px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.805rem;
+    vertical-align: middle;
+}
+.section-container .section-contenue table tbody tr td .validate{
+    color : #1a6848;
+    background-color: #d9f2e4;
+    padding: 2px 5px;
+    border-radius: 2px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.805rem;
+    vertical-align: middle;
+}
+
+
+.section-container .section-contenue table thead tr th:first-child{
+    border-top-left-radius: 6px;
+}
+.section-container .section-contenue table thead tr th:last-child{
+    border-top-right-radius: 6px;
+}
+.section-container .section-contenue table tbody tr:last-child td:first-child{
+    border-bottom-left-radius: 6px;
+}
+.section-container .section-contenue table tbody tr:last-child td:last-child{
+    border-bottom-right-radius: 6px;
+}
+
