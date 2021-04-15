@@ -22,6 +22,7 @@ export class AddMatiereComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
+    this.getProfs();
   }
 
 
@@ -30,7 +31,8 @@ export class AddMatiereComponent implements OnInit {
 
     let newMatiere = new Matiere();
     newMatiere.nom = this.nom;
-    newMatiere.prof._id = this.idProf;
+    newMatiere.prof = new Prof();
+    newMatiere.prof._id=this.idProf;
     newMatiere.image = this.image;
 
     this.matiereService.addMatiere(newMatiere)
@@ -38,8 +40,17 @@ export class AddMatiereComponent implements OnInit {
         console.log(reponse.message);
 
          // et on navigue vers la page d'accueil qui affiche la liste
-         this.router.navigate(["/home"]);
+         this.router.navigate(["/list-matiere"]);
       });
+  }
+
+  getProfs(){
+    this.profService.getProfs()
+    .subscribe(data => {
+      console.log(data);
+      this.prof = data.docs;
+     
+    });
   }
 
 }

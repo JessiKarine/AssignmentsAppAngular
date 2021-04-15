@@ -101,7 +101,7 @@ const routes:Routes = [
   },
   {
     path:"add-matiere",
-    component:MatiereComponent,
+    component:AddMatiereComponent,
   },
   {
     path:"matiere/:id",
