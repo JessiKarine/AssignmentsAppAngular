@@ -56,4 +56,44 @@ export class MatiereComponent implements OnInit {
     });
   }
 
+  premierePage() {
+    this.router.navigate(['/list-matiere'], {
+      queryParams: {
+        page:1,
+        limit:this.limit,
+      }
+    });
+  }
+
+  pageSuivante() {
+    /*
+    this.page = this.nextPage;
+    this.getAssignments();*/
+    this.router.navigate(['/list-matiere'], {
+      queryParams: {
+        page:this.nextPage,
+        limit:this.limit,
+      }
+    });
+  }
+
+
+  pagePrecedente() {
+    this.router.navigate(['/list-matiere'], {
+      queryParams: {
+        page:this.prevPage,
+        limit:this.limit,
+      }
+    });
+  }
+
+  dernierePage() {
+    this.router.navigate(['/list-matiere'], {
+      queryParams: {
+        page:this.totalPages,
+        limit:this.limit,
+      }
+    });
+  }
+
 }

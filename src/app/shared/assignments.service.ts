@@ -105,7 +105,7 @@ export class AssignmentsService {
 
     this.assignments.splice(index, 1);
     */
-
+    
 
     this.loggingService.log(assignment.nom, " a été supprimé");
 

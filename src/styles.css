@@ -2,7 +2,10 @@
 
 html, body { height: 100%; }
 body { margin: 0px; font-family: -apple-system, Roboto, "Helvetica Neue", sans-serif; }
-
+@font-face {
+    font-family: 'Manuscrit' ;
+    src: url(assets/fonts/ShorelinesScriptBold.otf) format("opentype");;
+}
 .btn { 
     display: inline-block;
     padding: 6px 12px;
@@ -23,6 +26,9 @@ body { margin: 0px; font-family: -apple-system, Roboto, "Helvetica Neue", sans-s
     background-image: none;
     border: 1px solid transparent;
     border-radius: 4px
+}
+.custom-container { 
+    padding : 0 10%;
 }
 .section-controller{
     background-color: #f7f9fa;
@@ -300,3 +306,134 @@ body { margin: 0px; font-family: -apple-system, Roboto, "Helvetica Neue", sans-s
 .pagination button { 
     margin-right: 5px;
 }
+
+/***************** FICHE ********************/
+
+.section-card-container .section-card { 
+   /* border: 3px dashed rgb(185, 185, 185); */
+    padding: 10px 5px 10px 10px;
+    border-radius: 5px;
+}
+.personal-info { 
+    width: 300px;
+}
+.personal-info .personal-info-eleve { 
+   display: flex;
+   flex-direction: column;
+}
+.personal-info .personal-info-eleve .personal-info-eleve-img { 
+    width : 123px; 
+    height: 123px;
+    border-radius: 100px;
+    border : 2px solid black;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    align-self: center;
+    margin-bottom : 10px;
+}
+.personal-info .personal-info-eleve  .personal-info-eleve-img .eleve-img{ 
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+}
+.personal-info .personal-info-eleve .personal-info-eleve-nom { 
+    background-color: #263545;
+    color : white ; 
+    font-weight: bold;
+    padding : 5px;
+    text-align: center;
+}
+.personal-info .personal-info-eleve .personnal-info-eleve-notes span{
+    font-size: 125px;
+    font-family: 'Manuscrit';
+    color : red;
+}
+.section-card-horizontal { 
+    flex : 1;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.section-card-horizontal .section-card  { 
+    margin-bottom: 20px;
+}
+.section-card .section-card-list-button { 
+    display: flex;
+    flex-direction: column;
+    padding: 5px 8px;
+}
+.section-card .section-card-list-button button { 
+    margin-bottom: 5px;
+}
+.section-card-horizontal .assignment-info{ 
+    display: flex;
+}
+.assignment-info .assignment-info-text { 
+    flex : 1;
+}
+.assignment-info .card-img-container { 
+    width: 516px;
+    margin-bottom: -14px  !important;
+    margin-top: -14px  !important;
+    overflow-y: hidden;
+}
+.assignment-info .card-img-container img { 
+    width: 100%;
+    overflow-y: hidden;
+    margin: 0 !important;
+}
+.assignment-info .etat-assignment { 
+    display: flex; 
+    align-items: center;
+}
+.assignment-info .etat-assignment.rendu { 
+    background-color: #16875d;
+    color: white;
+    font-weight: bold;
+}
+.assignment-info .etat-assignment.nonrendu { 
+    background-color: rgb(196, 0, 0);
+    color: white;
+    font-weight: bold;
+}
+.assignment-info .etat-assignment .etat-assignment-text { 
+    text-align: center;
+}
+
+
+.section-card-horizontal .profs-info{ 
+    display: flex;
+    margin-bottom: 0;
+}
+.profs-info .profs-info-text { 
+    flex : 1;
+}
+.profs-info .card-img-container { 
+    width: 216px;
+    margin-bottom: -14px  !important;
+    margin-top: -14px  !important;
+    overflow-y: hidden;
+}
+.profs-info .card-img-container img { 
+    width: 100%;
+    overflow-y: hidden;
+    margin: 0 !important;
+}
+.profs-info .etat-assignment { 
+    display: flex; 
+    align-items: center;
+}
+.profs-info .etat-assignment.rendu { 
+    background-color: #16875d;
+    color: white;
+    font-weight: bold;
+}
+.profs-info .etat-assignment.nonrendu { 
+    background-color: rgb(196, 0, 0);
+    color: white;
+    font-weight: bold;
+}
+.profs-info .etat-assignment .etat-assignment-text { 
+    text-align: center;
+}
+/***************** END FICHE ********************/

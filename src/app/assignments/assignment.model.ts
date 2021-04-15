@@ -1,5 +1,6 @@
 import { Matiere } from "../matiere/matiere.model";
-import { Prof } from "../prof/prof.model";
+import { Prof } from "../Prof/Prof.model";
+import { Eleve } from "./eleve.model";
 
 export class Assignment {
   _id?:string;
@@ -7,9 +8,7 @@ export class Assignment {
   nom:string;
   dateDeRendu:Date;
   rendu:boolean;
-  eleve:{ 
-    nom  : String;
-  };
+  eleve:Eleve;
   note:number;
   remarques:string;
   matiere:Matiere;

@@ -16,7 +16,7 @@ export class MatiereServiceService {
   uri = "http://localhost:8010/api/matiere";
   //uri = "https://backmadagascar2021.herokuapp.com/api/Matiere"
 
-  getMatieres():Observable<Matiere[]> {
+  getMatieres():Observable<any> {
     console.log("Dans le service de gestion des Matiere...")
     //return of(this.Matiere);
     return this.http.get<Matiere[]>(this.uri);

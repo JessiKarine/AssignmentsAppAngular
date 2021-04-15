@@ -16,7 +16,7 @@ export class ProfService {
   uri = "http://localhost:8010/api/prof";
   //uri = "https://backmadagascar2021.herokuapp.com/api/Prof"
 
-  getProfs():Observable<Prof[]> {
+  getProfs():Observable<any> {
     console.log("Dans le service de gestion des prof...")
     //return of(this.Prof);
     return this.http.get<Prof[]>(this.uri);
@@ -35,7 +35,7 @@ export class ProfService {
     return this.http.get<Prof[]>(this.uri).toPromise();
   }
 
-  getProf(id:number):Observable<Prof> {
+  getProf(id:string):Observable<Prof> {
     //let assignementCherche = this.Prof.find(a => a.id === id);
 
     //return of(assignementCherche);

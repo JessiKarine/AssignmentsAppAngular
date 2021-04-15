@@ -19,7 +19,6 @@ import { DragDropModule} from '@angular/cdk/drag-drop';
 import { AssignmentsComponent } from './assignments/assignments.component';
 import { RenduDirective } from './shared/rendu.directive';
 import { NonRenduDirective } from './shared/non-rendu.directive';
-import { FormsModule } from '@angular/forms';
 import { AssignmentDetailComponent } from './assignments/assignment-detail/assignment-detail.component';
 import { AddAssignmentComponent } from './assignments/add-assignment/add-assignment.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -37,6 +36,8 @@ import { ProfDetailComponent } from './prof/prof-detail/prof-detail.component';
 import { EditMatiereComponent } from './matiere/edit-matiere/edit-matiere.component';
 import { MatiereDetailComponent } from './matiere/matiere-detail/matiere-detail.component';
 import { AddMatiereComponent } from './matiere/add-matiere/add-matiere.component';
+import {MatStepperModule} from '@angular/material/stepper'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes:Routes = [
   {
@@ -100,7 +101,7 @@ const routes:Routes = [
   },
   {
     path:"add-matiere",
-    component:MatiereComponent,
+    component:AddMatiereComponent,
   },
   {
     path:"matiere/:id",
@@ -142,9 +143,13 @@ const routes:Routes = [
     MatNativeDateModule, MatListModule, MatCardModule, MatCheckboxModule,
     MatSlideToggleModule,
     DragDropModule,
-    RouterModule.forRoot(routes), HttpClientModule
+    RouterModule.forRoot(routes), HttpClientModule,
+    MatStepperModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }
