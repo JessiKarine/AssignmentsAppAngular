@@ -1,1 +1,18 @@
-<p>edit-matiere works!</p>
+<h2>Modification du matiere</h2>
+
+<form ngForm #formEdit class="form" (submit)="onSubmit($event); formEdit.reset();">
+  
+    <input matInput placeholder="Nom du prof" required [(ngModel)]="nom" name="nom">
+ 
+    <select ng-model="idProf">
+      <option *ngFor="let profs of prof" value="{{profs._id}}">{{profs.nom}}</option>
+    </select>
+  
+
+    <input matInput  placeholder="image" required [(ngModel)]="image" name="image">
+ 
+
+  <button mat-stroked-button color="primary">
+    Modifier
+  </button>
+</form>
