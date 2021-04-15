@@ -27,10 +27,11 @@ export class EditMatiereComponent implements OnInit {
   }
   onSubmit(event) {
     // on va modifier l'assignment
-   // if((!this.nom) || (!this.idprof)) return;
+    console.log("profff : "+ this.idProf);
+    if((!this.nom) || (!this.idProf)) return;
 
     this.matiere.nom = this.nom;
-   // this.matiere.prof = this.profService.getProf(this.idprof);
+    this.matiere.prof._id = this.idProf;
     this.matiere.image = this.image;
 
     this.matiereService.updateMatiere(this.matiere)

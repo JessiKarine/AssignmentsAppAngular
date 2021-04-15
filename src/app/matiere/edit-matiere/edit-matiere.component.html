@@ -4,7 +4,7 @@
   
     <input matInput placeholder="Nom du prof" required [(ngModel)]="nom" name="nom">
  
-    <select ng-model="idProf">
+    <select name="idProf" required [(ngModel)]="idProf">
       <option *ngFor="let profs of prof" value="{{profs._id}}">{{profs.nom}}</option>
     </select>
   
