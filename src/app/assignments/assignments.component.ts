@@ -22,6 +22,8 @@ export class AssignmentsComponent implements OnInit {
   renduList : Assignment[] = [];
   nonRenduList : Assignment[] = [];
   openPopupNote : boolean = false ; 
+  errorMessage : String ="aaaaaaaaaaa";
+  error : boolean =false ;
   // on injecte le service de gestion des assignments
   constructor(private assignmentsService:AssignmentsService,
               private route:ActivatedRoute,
@@ -73,6 +75,13 @@ export class AssignmentsComponent implements OnInit {
     }
     else { 
         transferArrayItem(event.previousContainer.data , event.container.data , event.previousIndex , event.currentIndex);
+        let val = event.container.data[event.currentIndex] as  Object;
+        let valtenaizy = val as Assignment;
+        valtenaizy.rendu=false ; 
+        this.assignmentsService.updateAssignment(valtenaizy)
+        .subscribe(message => { 
+
+        });
     }
   }
   onDropRendu(event : CdkDragDrop<string[]> ) { 
@@ -83,13 +92,19 @@ export class AssignmentsComponent implements OnInit {
     else {
        let ancienneValeur = (event.previousContainer.data[event.previousIndex] as Object) as Assignment;
        if(!ancienneValeur.note || ancienneValeur.note < 0 ) { 
-          
+          this.error=true ;
+          this.errorMessage = "Cette assignments n'a pas encore de note";
+          return ;
        }
        else { 
         transferArrayItem(event.previousContainer.data , event.container.data , event.previousIndex , event.currentIndex);
         let val = event.container.data[event.currentIndex] as  Object;
         let valtenaizy = val as Assignment;
         valtenaizy.rendu=true ; 
+        this.assignmentsService.updateAssignment(valtenaizy)
+        .subscribe(message => { 
+
+        });
       }
         
     }

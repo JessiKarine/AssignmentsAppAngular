@@ -22,6 +22,9 @@
 
   <div class="section-container">
     <div class="section-contenue">
+      <div *ngIf="error" class="error-container">
+          {{errorMessage}}
+      </div>
       <div class="section-card-container devoir-container">
         
         <div class="devoir-rendu devoir-subcontainer">
