@@ -27,9 +27,15 @@
                       <span>{{assignmentTransmis.eleve.nom}}</span>
                   </div>
                   <div class="personnal-info-eleve-notes">
-                      <span class="personal-info-eleve-notes-obtenue">
-                        {{assignmentTransmis.note}} | 20
+                      <span *ngIf="assignmentTransmis.note>0;else negatif" class="personal-info-eleve-notes-obtenue">
+                        {{ assignmentTransmis.note }} | 20
                       </span>
+                      <ng-template #negatif>
+                        <span  class="personal-info-eleve-notes-obtenue">
+                          0 | 20
+                        </span>
+                      </ng-template>
+                     
                   </div>
               </div>
           </mat-card>
