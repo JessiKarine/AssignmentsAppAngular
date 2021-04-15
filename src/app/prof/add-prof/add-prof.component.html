@@ -1,0 +1,18 @@
+<h2>Saisie du prof</h2>
+
+<form ngForm #formEdit class="form" (submit)="onSubmit($event); formEdit.reset();">
+  <mat-form-field>
+    <input matInput placeholder="Nom du prof" required [(ngModel)]="nom" name="nom">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="prenom du prof"  required [(ngModel)]="prenom" name="prenom">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput  placeholder="image" required [(ngModel)]="image" name="image">
+  </mat-form-field>
+
+  <button mat-stroked-button color="primary">
+    Modifier
+  </button>
+</form>

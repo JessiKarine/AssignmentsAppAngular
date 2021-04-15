@@ -1,0 +1,15 @@
+<div class="container">
+    <mat-card>
+      <mat-card-title>{{matiere.nom}}</mat-card-title>
+      <mat-card-subtitle>{{matiere.prof.nom}}</mat-card-subtitle>
+      <img mat-card-image src="{{matiere.image}}" alt="image matiere">
+      
+      <div id="bottom">
+        <nav>
+            <button  mat-stroked-button color="primary" (click)="onClickEdit()">EDIT</button>
+        </nav>
+        <button mat-stroked-button color="warn" (click)="onDelete()">DELETE</button>
+      </div>
+    </mat-card>
+  </div>
+  

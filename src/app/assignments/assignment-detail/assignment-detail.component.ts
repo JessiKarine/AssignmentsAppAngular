@@ -27,7 +27,7 @@ export class AssignmentDetailComponent implements OnInit {
   getAssignmentById() {
     // les params sont des string, on va forcer la conversion
     // en number en mettant un "+" devant
-    const id: number = +this.route.snapshot.params.id;
+    const id: String  = this.route.snapshot.params.id;
 
     console.log('Dans ngOnInit de details, id = ' + id);
     this.assignmentsService.getAssignment(id).subscribe((assignment) => {
@@ -36,8 +36,9 @@ export class AssignmentDetailComponent implements OnInit {
   }
 
   onAssignmentRendu() {
-    this.assignmentTransmis.rendu = true;
-
+    if(this.assignmentTransmis.note!=-1){
+      this.assignmentTransmis.rendu = true;
+    }
     this.assignmentsService
       .updateAssignment(this.assignmentTransmis)
       .subscribe((reponse) => {
@@ -45,7 +46,7 @@ export class AssignmentDetailComponent implements OnInit {
         // et on navigue vers la page d'accueil qui affiche la liste
         this.router.navigate(['/home']);
       });
-
+      
     //this.assignmentTransmis = null;
   }
 

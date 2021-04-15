@@ -1,0 +1,21 @@
+<div class="container">
+   
+    <table class="table table-bordered table-hover">
+       <thead>
+          <tr>
+             <th>Nom</th>
+             <th>Nom de l'enseignement</th>
+             <th>Image</th>
+          </tr>
+       </thead>
+       <tbody>
+          <tr *ngFor="let matiere of lsmatiere">
+             <a routerLink="/matiere/{{matiere._id}}"><td>{{matiere.nom + " id : "+matiere._id}}</td></a>
+             <td>{{matiere.prof.nom}}</td>
+             <td><img mat-card-image src="{{matiere.image}}" alt="image matiere"></td>
+          </tr>
+       </tbody>
+    </table>
+    
+   </div>
+   

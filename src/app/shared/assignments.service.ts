@@ -5,6 +5,7 @@ import { catchError, filter, map, tap } from 'rxjs/operators';
 import { Assignment } from '../assignments/assignment.model';
 import { LoggingService } from './logging.service';
 import { assignmentsGeneres } from './data';
+import { Config } from '../utilitaire/config.model';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +15,9 @@ export class AssignmentsService {
 
   constructor(private loggingService:LoggingService, private http:HttpClient) { }
 
-  //uri = "http://localhost:8010/api/assignments";
-  uri = "https://backmadagascar2021.herokuapp.com/api/assignments"
+  uri = Config.getBaseUrl()+"/api/assignments";
+  //uri = "https://backmadagascar2021.herokuapp.com/api/assignments"
+  //uri = "https://backmbdsmevajessi.herokuapp.com/api/login"
 
   getAssignments():Observable<Assignment[]> {
     console.log("Dans le service de gestion des assignments...")
@@ -36,7 +38,7 @@ export class AssignmentsService {
     return this.http.get<Assignment[]>(this.uri).toPromise();
   }
 
-  getAssignment(id:number):Observable<Assignment> {
+  getAssignment(id:String):Observable<Assignment> {
     //let assignementCherche = this.assignments.find(a => a.id === id);
 
     //return of(assignementCherche);

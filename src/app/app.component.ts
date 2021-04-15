@@ -26,7 +26,7 @@ export class AppComponent {
       this.router.navigate(["/home"]);
     } else {
       // je ne suis pas loggé, je me loggue
-      this.authService.logIn("admin", "toto");
+      this.authService.logIn(true);
     }
   }
 

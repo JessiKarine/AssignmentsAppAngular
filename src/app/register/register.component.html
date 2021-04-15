@@ -1,0 +1,58 @@
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <div class="login100-form-title" style="background-image: url(/assets/images/bg-01.jpg);">
+                <span class="login100-form-title-1">
+                    Inscription
+                </span>
+            </div>
+
+            <form ngForm class="login100-form validate-form" #formRegister (submit)="onSubmit($event); formRegister.reset();">
+                <div class="wrap-input100 validate-input m-b-26" data-validate="Le nom de l'utilisateur est obligatoire">
+                    <span class="label-input100">Nom de l'utilisateur</span>
+                    <input  matInput class="input100" type="text" name="username" required  [(ngModel)]="username" placeholder="Entrer le nom de l'utilisateur">
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input m-b-26" data-validate="Votre prenom est obligatoire">
+                    <span class="label-input100">Prenom</span>
+                    <input  matInput class="input100" type="text" name="prenom" required [(ngModel)]="prenom" placeholder="Entrer votre prenom">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-18" data-validate = "Le mot de passe est obligatoire">
+                    <span class="label-input100">Mot de passe</span>
+                    <input class="input100" type="password"  name="password" [(ngModel)]="password" placeholder="Entrer le mot de passe">
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input m-b-18" data-validate = "La confirmation du mot de passe est obligatoire">
+                    <span class="label-input100">Confirmer votre mot de passe</span>
+                    <input class="input100" type="confirmpass"  name="confirmpass" [(ngModel)]="confirmpass" placeholder="Confirmer votre mot de passe">
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="flex-sb-m w-full p-b-30">
+                   
+
+                    <div>
+                        <a routerLink="/login" class="txt1">
+                            Vous avez déjà  un compte?
+                        </a>
+                    </div>
+                    
+                </div>
+                <div *ngIf="error">
+                    <span class="msg-err">{{error}}</span>
+                </div>
+                <div *ngIf="succes">
+                    <span class="msg-succes">{{succes}}</span>
+                </div>
+
+
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn">
+                        S'inscrire
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

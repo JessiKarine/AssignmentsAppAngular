@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AssignmentsService } from '../shared/assignments.service';
 import { Assignment } from './assignment.model';
+import { CdkDragDrop ,   moveItemInArray ,   transferArrayItem} from '@angular/cdk/drag-drop'
 
 @Component({
   selector: 'app-assignments',
@@ -18,7 +19,9 @@ export class AssignmentsComponent implements OnInit {
   prevPage: number;
   hasNextPage: boolean;
   nextPage: number;
-
+  renduList : Assignment[] = [];
+  nonRenduList : Assignment[] = [];
+  openPopupNote : boolean = false ; 
   // on injecte le service de gestion des assignments
   constructor(private assignmentsService:AssignmentsService,
               private route:ActivatedRoute,
@@ -50,9 +53,47 @@ export class AssignmentsComponent implements OnInit {
       this.hasNextPage = data.hasNextPage;
       this.nextPage = data.nextPage;
       console.log("données reçues");
+      console.log(data.docs);
+      this.parseDataToRenduAndNone(data.docs);
     });
   }
-
+  parseDataToRenduAndNone = ( list : Assignment[]) =>{ 
+    list.map(item => { 
+      if(item.rendu){
+        this.renduList.push(item);
+      }
+      else { 
+        this.nonRenduList.push(item);
+      }
+    });
+  }
+  onDropNonRendu(event : CdkDragDrop<string[]> ) { 
+    if(event.previousContainer == event.container){
+       moveItemInArray(event.container.data,event.previousIndex,event.currentIndex);
+    }
+    else { 
+        transferArrayItem(event.previousContainer.data , event.container.data , event.previousIndex , event.currentIndex);
+    }
+  }
+  onDropRendu(event : CdkDragDrop<string[]> ) { 
+    
+    if(event.previousContainer == event.container){
+        moveItemInArray(event.container.data,event.previousIndex,event.currentIndex);
+    }
+    else {
+       let ancienneValeur = (event.previousContainer.data[event.previousIndex] as Object) as Assignment;
+       if(!ancienneValeur.note || ancienneValeur.note < 0 ) { 
+          
+       }
+       else { 
+        transferArrayItem(event.previousContainer.data , event.container.data , event.previousIndex , event.currentIndex);
+        let val = event.container.data[event.currentIndex] as  Object;
+        let valtenaizy = val as Assignment;
+        valtenaizy.rendu=true ; 
+      }
+        
+    }
+  }
   onDeleteAssignment(event) {
     // event = l'assignment à supprimer
 
