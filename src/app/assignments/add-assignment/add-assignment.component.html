@@ -15,14 +15,18 @@
     
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
-      <mat-form-field>
+      
         <mat-label>Matière</mat-label>
-        <input matInput  formControlName="firstCtrl" placeholder="Matière" required [(ngModel)]="matiere" name="matiere">
-      </mat-form-field>
-      <mat-form-field>
+        <select formControlName="firstCtrl"  [(ngModel)]="matiere" name="matiere">
+          <option *ngFor="let mat of uneMatiere" value="{{mat._id}}">{{mat.nom}}</option>
+        </select>
+      
+      
         <mat-label>Professeur</mat-label>
-        <input matInput  formControlName="firstCtrl" placeholder="Professeur" required [(ngModel)]="prof" name="prof">
-      </mat-form-field>
+        <select formControlName="firstCtrl" required [(ngModel)]="prof" name="prof">
+          <option *ngFor="let pr of profs" value="{{pr._id}}">{{pr.nom}}</option>
+        </select>
+      
       <div>
         <button mat-button matStepperNext>Next</button>
       </div>
