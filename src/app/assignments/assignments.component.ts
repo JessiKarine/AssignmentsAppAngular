@@ -53,7 +53,7 @@ export class AssignmentsComponent implements OnInit {
       this.hasNextPage = data.hasNextPage;
       this.nextPage = data.nextPage;
       console.log("données reçues");
-
+      console.log(data.docs);
       this.parseDataToRenduAndNone(data.docs);
     });
   }
@@ -85,6 +85,7 @@ export class AssignmentsComponent implements OnInit {
         let val = event.container.data[event.currentIndex] as  Object;
         let valtenaizy = val as Assignment;
         valtenaizy.rendu=true ; 
+        
     }
   }
   onDeleteAssignment(event) {

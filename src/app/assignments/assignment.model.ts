@@ -7,7 +7,9 @@ export class Assignment {
   nom:string;
   dateDeRendu:Date;
   rendu:boolean;
-  eleve:string;
+  eleve:{ 
+    nom  : String;
+  };
   note:number;
   remarques:string;
   matiere:Matiere;
