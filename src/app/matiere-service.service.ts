@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Matiere } from './matiere/matiere.model';
 import { LoggingService } from './shared/logging.service';
+import { Config } from './utilitaire/config.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class MatiereServiceService {
 
   constructor(private loggingService:LoggingService, private http:HttpClient) { }
 
-  uri = "http://localhost:8010/api/matiere";
+  uri = Config.getBaseUrl()+"/api/matiere";
   //uri = "https://backmadagascar2021.herokuapp.com/api/Matiere"
 
   getMatieres():Observable<any> {

@@ -4,6 +4,7 @@ import { forkJoin, Observable, of } from 'rxjs';
 import { catchError, filter, map, tap } from 'rxjs/operators';
 import { Prof } from './prof/prof.model';
 import { LoggingService } from './shared/logging.service';
+import { Config } from './utilitaire/config.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class ProfService {
 
   constructor(private loggingService:LoggingService, private http:HttpClient) { }
 
-  uri = "http://localhost:8010/api/prof";
+  uri = Config.getBaseUrl()+"/api/prof";
   //uri = "https://backmadagascar2021.herokuapp.com/api/Prof"
 
   getProfs():Observable<any> {

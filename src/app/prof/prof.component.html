@@ -20,23 +20,35 @@
    </div>
    <div class="section-container">
       <div class="section-contenue">
-         <table id="table-annonce" class="table table-hover">
-            <thead>
-               <tr>
-                  <th>Nom</th>
-                  <th>Prenom</th>
-                  <th>Photo</th>
-               </tr>
-            </thead>
-            <tbody>
-               <tr *ngFor="let prof of lsprof">
-                  <a routerLink="/prof/{{prof._id}}"><td>{{prof.nom}}</td></a>
-                  <td>{{prof.prenom}}</td>
-                  <td><img mat-card-image src="{{prof.image}}" alt="image prof"></td>
-               </tr>
-            </tbody>
-         </table>
+        <div class="section-card-container devoir-container">
+         
+          <div class="devoir-non-rendu devoir-subcontainer">
+              <h1>Liste des Profs</h1>
+              <div  class="devoir-subcontainer-item" >
+                  <mat-card  cdkDrag *ngFor="let prof of lsprof"  class="assignment-card">
+                      <div class="card-img-container">
+                         <img mat-card-image src="{{prof.image}}"/>
+                      </div>
+                      <mat-card-title >
+                        {{prof.nom + " "+prof.prenom+""}}
+                     </mat-card-title>
+                      <mat-card-content class="assignment-card-content">
+                        <mat-action-list class="button-container">
+                          <a href="/prof-detail/{{prof._id}}">
+                          <button mat-mini-fab color="primary" ><mat-icon color="white">assignment</mat-icon></button>
+                        </a>
+                        </mat-action-list>
+                      </mat-card-content>
+                  </mat-card>
+             
+              </div>
+          </div>
+  
+        </div>
+    
       </div>
    </div>
+   
+   
 </main>
   
