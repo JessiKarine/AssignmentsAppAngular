@@ -83,7 +83,7 @@ export class AssignmentsComponent implements OnInit {
     else {
        let ancienneValeur = (event.previousContainer.data[event.previousIndex] as Object) as Assignment;
        if(!ancienneValeur.note || ancienneValeur.note < 0 ) { 
-        
+          
        }
        else { 
         transferArrayItem(event.previousContainer.data , event.container.data , event.previousIndex , event.currentIndex);
