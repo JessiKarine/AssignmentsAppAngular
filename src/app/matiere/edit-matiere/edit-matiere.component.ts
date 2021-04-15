@@ -53,6 +53,7 @@ export class EditMatiereComponent implements OnInit {
     this.matiereService.getMatiere(id).subscribe((matiere) => {
       this.nom = matiere.nom;
       this.getProfs();
+      this.idProf = matiere.prof._id;
       this.image = matiere.image;
       this.matiere = matiere;
       console.log("matiere : "+this.matiere.nom)
