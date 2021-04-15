@@ -21,7 +21,7 @@ export class AssignmentsComponent implements OnInit {
   nextPage: number;
   renduList : Assignment[] = [];
   nonRenduList : Assignment[] = [];
-
+  openPopupNote : boolean = false ; 
   // on injecte le service de gestion des assignments
   constructor(private assignmentsService:AssignmentsService,
               private route:ActivatedRoute,
@@ -81,10 +81,16 @@ export class AssignmentsComponent implements OnInit {
         moveItemInArray(event.container.data,event.previousIndex,event.currentIndex);
     }
     else {
-       transferArrayItem(event.previousContainer.data , event.container.data , event.previousIndex , event.currentIndex);
+       let ancienneValeur = (event.previousContainer.data[event.previousIndex] as Object) as Assignment;
+       if(!ancienneValeur.note || ancienneValeur.note < 0 ) { 
+        
+       }
+       else { 
+        transferArrayItem(event.previousContainer.data , event.container.data , event.previousIndex , event.currentIndex);
         let val = event.container.data[event.currentIndex] as  Object;
         let valtenaizy = val as Assignment;
         valtenaizy.rendu=true ; 
+      }
         
     }
   }

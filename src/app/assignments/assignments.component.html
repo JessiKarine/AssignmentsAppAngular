@@ -11,7 +11,7 @@
               <path d="m394.417 198.1 79.9 11.23a5.931 5.931 0 0 0 .837.059 6 6 0 0 0 4.368-10.112l-114.795-121.977a6 6 0 0 0 -8.612-.13l-92.808 92.8a5.949 5.949 0 0 0 -1.087 6.99l42.12 81.719-230.572-117.485a6 6 0 0 0 -8.463 7.1l36.512 119.706h-85.817a5.679 5.679 0 0 0 -5.53 3.3 5.4 5.4 0 0 0 1.239 6.146l154.391 158.247c1.128 1.156 2.675 2.307 4.291 2.307h228.609a6 6 0 0 0 5.932-5.141l95.681-115.08a6 6 0 0 0 -.259-7.964zm-34.19-108.076 98.854 105.043-178.781-25.128zm-279.327 68.276 215.308 109.7h-181.845zm92.018 267.7-142.666-146h285.076l75.252 146zm227.7-6.72-122.425-237.52 97.144 13.655 112.642 118.79z"/>
               <path d="m86.457 296h-1.946a6 6 0 1 0 0 12h1.946a6 6 0 0 0 0-12z"/><path d="m192.245 296h-86.286a6 6 0 0 0 0 12h86.286a6 6 0 0 0 0-12z"/>
           </svg>
-          <span class="duck-title">Lecoincoin</span>
+          <span class="duck-title">Liste des assignments</span>
       </div>
 
       <div class="section-controller-add-bar">
@@ -19,23 +19,7 @@
       </div>
   </div>
  
-  <h1>Liste des assignments</h1>
-  <mat-divider></mat-divider>
 
-  <nav>
-    <button mat-raised-button color="primary" (click)="premierePage()">
-      Première
-    </button>
-    <button mat-raised-button color="primary" [disabled]="!hasPrevPage" (click)="pagePrecedente()">
-      Prev
-    </button>
-    <button mat-raised-button color="primary" [disabled]="!hasNextPage" (click)="pageSuivante()">
-      Suiv
-    </button>
-    <button mat-raised-button color="primary" (click)="dernierePage()">
-      Dernière
-    </button>
-  </nav>
   <div class="section-container">
     <div class="section-contenue">
       <div class="section-card-container devoir-container">
@@ -61,9 +45,15 @@
                 <div class="card-img-container">
                   <img mat-card-image src="{{assignment.matiere.image}}"/>
                 </div>
-                <mat-card-content>
-                    Rendu le : {{assignment.dateDeRendu | date }}
+                <mat-card-content class="assignment-card-content">
+                    <div class="card-content-etat-container">
+                        <span class="card-content-etat">A rendre</span>
+                    </div>
+                    <mat-action-list class="button-container">
+                      <button mat-mini-fab color="primary" ><mat-icon color="white">assignment</mat-icon></button>
+                    </mat-action-list>
                 </mat-card-content>
+                
             </mat-card>
 
           </div>
@@ -89,8 +79,13 @@
                     <div class="card-img-container">
                        <img mat-card-image src="{{assignment.matiere.image}}"/>
                     </div>
-                    <mat-card-content>
-                        Rendu le : {{assignment.dateDeRendu | date }}
+                    <mat-card-content class="assignment-card-content">
+                      <div class="card-content-etat-container">
+                          <span class="card-content-etat">Rendu le : {{assignment.dateDeRendu | date }}</span>
+                      </div>
+                      <mat-action-list class="button-container">
+                        <button mat-mini-fab color="primary" ><mat-icon color="white">assignment</mat-icon></button>
+                      </mat-action-list>
                     </mat-card-content>
                 </mat-card>
            
@@ -98,7 +93,23 @@
         </div>
 
       </div>
+          
+      <nav class="pagination">
+        <button mat-raised-button color="primary" (click)="premierePage()">
+          Première
+        </button>
+        <button mat-raised-button color="primary" [disabled]="!hasPrevPage" (click)="pagePrecedente()">
+          Prev
+        </button>
+        <button mat-raised-button color="primary" [disabled]="!hasNextPage" (click)="pageSuivante()">
+          Suiv
+        </button>
+        <button mat-raised-button color="primary" (click)="dernierePage()">
+          Dernière
+        </button>
+      </nav>
+
     </div>
   </div>
-  
+    
 </main>
