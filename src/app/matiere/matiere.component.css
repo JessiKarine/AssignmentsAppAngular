@@ -1,3 +1,12 @@
+.container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .ajouterBtn {
+    align-self: flex-end;
+  }
+  
 .section-controller{
     background-color: #f7f9fa;
     height: 70px;
