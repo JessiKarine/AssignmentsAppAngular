@@ -27,9 +27,15 @@
                       <span>{{assignmentTransmis.eleve.nom}}</span>
                   </div>
                   <div class="personnal-info-eleve-notes">
-                      <span class="personal-info-eleve-notes-obtenue">
-                        {{assignmentTransmis.note}} | 20
+                      <span *ngIf="assignmentTransmis.note>0;else negatif" class="personal-info-eleve-notes-obtenue">
+                        {{ assignmentTransmis.note }} | 20
                       </span>
+                      <ng-template #negatif>
+                        <span  class="personal-info-eleve-notes-obtenue">
+                          0 | 20
+                        </span>
+                      </ng-template>
+                     
                   </div>
               </div>
           </mat-card>
@@ -43,7 +49,7 @@
                           <p> <span class="titre">Date de Rendu : </span> {{assignmentTransmis.dateDeRendu |date}}  </p>
                           <p> <span class="titre">Remarques : </span> {{assignmentTransmis.remarques }}  </p>
                       </div>
-                      <mat-card [ngClass]="{'etat-assignment rendu':assignmentTransmis.rendu , 'etat-assignment nonrendu':!assignmentTransmis.rendu}">
+                      <mat-card [ngClass]="{'etat-assignment':true,' rendu':assignmentTransmis.rendu , ' nonrendu':!assignmentTransmis.rendu}">
                           <div class="etat-assignment-icon">
                               <mat-icon *ngIf="assignmentTransmis.rendu; else nonrendu">check</mat-icon>
                               <ng-template #nonrendu>

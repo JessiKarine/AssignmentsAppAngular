@@ -65,7 +65,7 @@ export class AssignmentDetailComponent implements OnInit {
   }
 
   onClickEdit() {
-    this.router.navigate(['/assignment', this.assignmentTransmis.id, 'edit'], {
+    this.router.navigate(['/assignment', this.assignmentTransmis._id, 'edit'], {
       
     });
   }
