@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { forkJoin, Observable, of } from 'rxjs';
 import { catchError, filter, map, tap } from 'rxjs/operators';
-import { Prof } from './Prof/Prof.model';
+import { Prof } from './prof/prof.model';
 import { LoggingService } from './shared/logging.service';
 
 @Injectable({

@@ -1,4 +1,4 @@
-import { Prof } from "../Prof/Prof.model";
+import { Prof } from "../prof/prof.model";
 
 
 export class Matiere {
