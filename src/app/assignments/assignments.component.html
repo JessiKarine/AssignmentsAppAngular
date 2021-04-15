@@ -85,8 +85,11 @@
                       <div class="card-content-etat-container">
                           <span class="card-content-etat">Rendu le : {{assignment.dateDeRendu | date }}</span>
                       </div>
+                     
                       <mat-action-list class="button-container">
+                        <a href="/assignment/{{assignment._id}}">
                         <button mat-mini-fab color="primary" ><mat-icon color="white">assignment</mat-icon></button>
+                      </a>
                       </mat-action-list>
                     </mat-card-content>
                 </mat-card>
