@@ -18,6 +18,7 @@ export class EditProfComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
+    this.getProfById();
   }
   onSubmit(event) {
     // on va modifier l'assignment
@@ -25,14 +26,30 @@ export class EditProfComponent implements OnInit {
 
     this.prof.nom = this.nom;
     this.prof.prenom = this.prenom;
+    this.prof.image = this.image;
 
     this.profService.updateProf(this.prof)
       .subscribe(message => {
-        console.log(message);
+        console.log("message "+message);
 
         // et on navigue vers la page d'accueil
-        this.router.navigate(["/prof-list"]);
+        this.router.navigate(["/list-prof"]);
       })
 
+  }
+
+  getProfById() {
+    // les params sont des string, on va forcer la conversion
+    // en number en mettant un "+" devant
+    const id  = this.route.snapshot.params.id;
+
+    console.log('Dans ngOnInit de details, id = ' + id);
+    this.profService.getProf(id).subscribe((prof) => {
+      this.nom = prof.nom;
+      this.prenom = prof.prenom;
+      this.image = prof.image;
+      this.prof = prof;
+      console.log("prof : "+this.prof.nom)
+    });
   }
 }

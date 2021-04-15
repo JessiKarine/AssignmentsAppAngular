@@ -26,12 +26,7 @@ export class ProfDetailComponent implements OnInit {
 
   onClickEdit() {
     this.router.navigate(['prof/', this.prof._id, 'edit'], {
-     /* queryParams: {
-        nom:'Michel Buffa',
-        metier:"Professeur",
-        responsable:"MIAGE"
-      },
-      fragment:"edition"*/
+    
     });
   }
 
