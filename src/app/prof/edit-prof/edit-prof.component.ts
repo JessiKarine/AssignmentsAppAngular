@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProfService } from 'src/app/prof-service.service';
-import { Prof } from '../Prof.model';
+import { Prof } from '../prof.model';
 
 @Component({
   selector: 'app-edit-prof',
