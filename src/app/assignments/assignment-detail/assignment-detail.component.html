@@ -43,7 +43,7 @@
                           <p> <span class="titre">Date de Rendu : </span> {{assignmentTransmis.dateDeRendu |date}}  </p>
                           <p> <span class="titre">Remarques : </span> {{assignmentTransmis.remarques }}  </p>
                       </div>
-                      <mat-card [ngClass]="{'etat-assignment rendu':assignmentTransmis.rendu , 'etat-assignment nonrendu':!assignmentTransmis.rendu}">
+                      <mat-card [ngClass]="{'etat-assignment':true,' rendu':assignmentTransmis.rendu , ' nonrendu':!assignmentTransmis.rendu}">
                           <div class="etat-assignment-icon">
                               <mat-icon *ngIf="assignmentTransmis.rendu; else nonrendu">check</mat-icon>
                               <ng-template #nonrendu>
