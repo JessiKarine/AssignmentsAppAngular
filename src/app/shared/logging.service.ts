@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { Utilisateur } from '../login/login.model';
 import { forkJoin, Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Config } from '../utilitaire/config.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoggingService {
-  uri = "https://backmbdsmevajessi.herokuapp.com/api/";
+  uri = Config.getBaseUrl()+"/api/";
   constructor(private http:HttpClient) { }
 
   log(assignmentName:string, action:string) {
