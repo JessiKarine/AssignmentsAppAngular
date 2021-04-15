@@ -72,7 +72,7 @@ export class ProfService {
   }
 
   addProf(Prof:Prof):Observable<any> {
-    Prof._id = this.generateId()+"";
+   // Prof._id = this.generateId()+"";
     //this.loggingService.log(Prof.nom, " a été ajouté");
 
     /*this.Prof.push(Prof);
