@@ -83,7 +83,7 @@ export class AddAssignmentComponent implements OnInit {
         console.log("Vita onSubmit");
 
          // et on navigue vers la page d'accueil qui affiche la liste
-         //this.router.navigate(["/home"]);
+         this.router.navigate(["/home"]);
       });
   }
   
