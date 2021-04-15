@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {  Router } from '@angular/router';
+import {  ActivatedRoute, Router } from '@angular/router';
 import { ProfService } from 'src/app/prof-service.service';
 import { AuthService } from '../../shared/auth.service';
 import { Prof } from '.././prof.model';
@@ -15,10 +15,12 @@ export class ProfDetailComponent implements OnInit {
   constructor(
     private router: Router,
     private authService:AuthService,
+    private route: ActivatedRoute,
     private profService: ProfService
   ) {}
 
   ngOnInit(): void {
+    this.getProfById();
   }
 
 
@@ -49,4 +51,16 @@ export class ProfDetailComponent implements OnInit {
         this.router.navigate(['/prof-list']);
       });
   }
+
+  getProfById() {
+    // les params sont des string, on va forcer la conversion
+    // en number en mettant un "+" devant
+    const id  = this.route.snapshot.params.id;
+
+    console.log('Dans ngOnInit de details, id = ' + id);
+    this.profService.getProf(id).subscribe((prof) => {
+      this.prof = prof;
+    });
+  }
+
 }

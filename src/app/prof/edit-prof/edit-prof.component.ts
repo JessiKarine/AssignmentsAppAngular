@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ProfService } from 'src/app/prof-service.service';
 import { Prof } from '../Prof.model';
 
 @Component({
@@ -11,7 +13,9 @@ export class EditProfComponent implements OnInit {
   nom;
   prenom;
   image;
-  constructor() { }
+  constructor( private profService: ProfService,
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -22,13 +26,13 @@ export class EditProfComponent implements OnInit {
     this.prof.nom = this.nom;
     this.prof.prenom = this.prenom;
 
-   /* this.profService.updateAssignment(this.prof)
+    this.profService.updateProf(this.prof)
       .subscribe(message => {
         console.log(message);
 
         // et on navigue vers la page d'accueil
-        this.router.navigate(["/home"]);
-      })*/
+        this.router.navigate(["/prof-list"]);
+      })
 
   }
 }

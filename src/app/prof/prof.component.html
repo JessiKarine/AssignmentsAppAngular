@@ -10,7 +10,7 @@
       </thead>
       <tbody>
          <tr *ngFor="let prof of lsprof">
-            <a routerLink="/prof/{{prof._id}}"><td>{{prof.nom}}</td></a>
+            <a routerLink="/prof/{{prof._id}}"><td>{{prof.nom + " id : "+prof._id}}</td></a>
             <td>{{prof.prenom}}</td>
             <td><img mat-card-image src="{{prof.image}}" alt="image prof"></td>
          </tr>

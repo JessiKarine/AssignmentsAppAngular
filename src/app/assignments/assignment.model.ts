@@ -1,5 +1,5 @@
+import { Prof } from "../Prof/Prof.model";
 import { Matiere } from "./matiere.model";
-import { Prof } from "./prof.model";
 
 export class Assignment {
   _id?:string;

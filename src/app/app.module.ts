@@ -62,7 +62,7 @@ const routes:Routes = [
   {
     path:"assignment/:id/edit",
     component:EditAssigmentComponent,
-    canActivate : [AuthGuard]
+    //canActivate : [AuthGuard]
   },
   {
     path:"login",
@@ -90,7 +90,7 @@ const routes:Routes = [
   {
     path:"prof/:id/edit",
     component:EditProfComponent,
-    canActivate : [AuthGuard]
+    //canActivate : [AuthGuard]
   },
 ]
 @NgModule({
