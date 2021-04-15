@@ -92,6 +92,25 @@ const routes:Routes = [
     component:EditProfComponent,
     //canActivate : [AuthGuard]
   },
+  {
+    // idem avec  http://localhost:4200/home
+    path:"list-matiere",
+    component:MatiereComponent
+    //canActivate : [AuthGuard]
+  },
+  {
+    path:"add-matiere",
+    component:AddMatiereComponent,
+  },
+  {
+    path:"matiere/:id",
+    component:MatiereDetailComponent,
+  },
+  {
+    path:"matiere/:id/edit",
+    component:EditProfComponent,
+    //canActivate : [AuthGuard]
+  }
 ]
 @NgModule({
   declarations: [
