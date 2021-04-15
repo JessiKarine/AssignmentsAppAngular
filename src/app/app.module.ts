@@ -29,6 +29,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HeaderComponent } from './header/header.component';
+import { ProfComponent } from './prof/prof.component';
+import { MatiereComponent } from './matiere/matiere.component';
+import { AddProfComponent } from './prof/add-prof/add-prof.component';
+import { EditProfComponent } from './prof/edit-prof/edit-prof.component';
+import { ProfDetailComponent } from './prof/prof-detail/prof-detail.component';
+import { EditMatiereComponent } from './matiere/edit-matiere/edit-matiere.component';
+import { AddMatiereComponent } from './add/add-matiere/add-matiere.component';
+import { MatiereDetailComponent } from './add/matiere-detail/matiere-detail.component';
 
 const routes:Routes = [
   {
@@ -64,7 +72,26 @@ const routes:Routes = [
   {
     path:"register",
     component:RegisterComponent
-  }
+  },
+  {
+    // idem avec  http://localhost:4200/home
+    path:"list-prof",
+    component:ProfComponent
+    //canActivate : [AuthGuard]
+  },
+  {
+    path:"add-prof",
+    component:AddProfComponent,
+  },
+  {
+    path:"prof/:id",
+    component:ProfDetailComponent,
+  },
+  {
+    path:"prof/:id/edit",
+    component:EditProfComponent,
+    canActivate : [AuthGuard]
+  },
 ]
 @NgModule({
   declarations: [
@@ -77,7 +104,15 @@ const routes:Routes = [
     EditAssigmentComponent,
     LoginComponent,
     RegisterComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProfComponent,
+    MatiereComponent,
+    AddProfComponent,
+    EditProfComponent,
+    ProfDetailComponent,
+    EditMatiereComponent,
+    AddMatiereComponent,
+    MatiereDetailComponent
   ],
   imports: [
     BrowserModule,
