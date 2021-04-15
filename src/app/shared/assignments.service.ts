@@ -47,7 +47,6 @@ export class AssignmentsService {
     .pipe(
       // traitement 1
       map(a => {
-        a.nom += " MODIFIE PAR MAP";
         return a;
       }),
       tap(a => {
