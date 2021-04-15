@@ -43,7 +43,7 @@ export class ProfDetailComponent implements OnInit {
         // on cache l'affichage du détail
         this.prof = null;
         // et on navigue vers la page d'accueil qui affiche la liste
-        this.router.navigate(['/prof-list']);
+        this.router.navigate(['/list-prof']);
       });
   }
 
