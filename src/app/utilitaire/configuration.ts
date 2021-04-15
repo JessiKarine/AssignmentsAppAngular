@@ -3,5 +3,5 @@ export const config = {
         "prod" : "https://backmbdsmevajessi.herokuapp.com",
         "local": "http://localhost:8010"
     },
-    "envDefault" : "prod"
+    "envDefault" : "local"
 }
