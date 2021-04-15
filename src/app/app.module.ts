@@ -35,8 +35,8 @@ import { AddProfComponent } from './prof/add-prof/add-prof.component';
 import { EditProfComponent } from './prof/edit-prof/edit-prof.component';
 import { ProfDetailComponent } from './prof/prof-detail/prof-detail.component';
 import { EditMatiereComponent } from './matiere/edit-matiere/edit-matiere.component';
-import { AddMatiereComponent } from './add/add-matiere/add-matiere.component';
-import { MatiereDetailComponent } from './add/matiere-detail/matiere-detail.component';
+import { MatiereDetailComponent } from './matiere/matiere-detail/matiere-detail.component';
+import { AddMatiereComponent } from './matiere/add-matiere/add-matiere.component';
 
 const routes:Routes = [
   {
@@ -100,7 +100,7 @@ const routes:Routes = [
   },
   {
     path:"add-matiere",
-    component:AddMatiereComponent,
+    component:MatiereComponent,
   },
   {
     path:"matiere/:id",
@@ -108,7 +108,7 @@ const routes:Routes = [
   },
   {
     path:"matiere/:id/edit",
-    component:EditProfComponent,
+    component:EditMatiereComponent,
     //canActivate : [AuthGuard]
   }
 ]

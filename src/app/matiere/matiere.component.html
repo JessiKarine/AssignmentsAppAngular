@@ -10,9 +10,9 @@
        </thead>
        <tbody>
           <tr *ngFor="let matiere of lsmatiere">
-             <a routerLink="/prof/{{matiere._id}}"><td>{{matiere.nom + " id : "+matiere._id}}</td></a>
+             <a routerLink="/matiere/{{matiere._id}}"><td>{{matiere.nom + " id : "+matiere._id}}</td></a>
              <td>{{matiere.prof.nom}}</td>
-             <td><img mat-card-image src="{{matiere.image}}" alt="image prof"></td>
+             <td><img mat-card-image src="{{matiere.image}}" alt="image matiere"></td>
           </tr>
        </tbody>
     </table>
