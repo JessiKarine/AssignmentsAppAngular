@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatiereServiceService } from 'src/app/matiere-service.service';
 import { ProfService } from 'src/app/prof-service.service';
-import { Prof } from 'src/app/Prof/prof.model';
+import { Prof } from 'src/app/prof/prof.model';
 import { Matiere } from '../matiere.model';
 
 @Component({
